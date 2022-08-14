@@ -66,7 +66,7 @@ const UpdateCourse = () => {
         navigate("/forbidden");
       }
     }
-  }, [id, navigate, courseData.courseId?.id, isLoading]);
+  }, [id, navigate, courseData.courseUser?.id, isLoading]);
 
   // Update course function
   const updateCourse = async (
@@ -81,7 +81,7 @@ const UpdateCourse = () => {
       const encodedCredentials = btoa(
         `${authCtx.credentials.emailAddress}:${authCtx.credentials.password}`
       );
-      // console.log(userId);
+
       const response = await axios.put(
         `http://localhost:5000/api/courses/${courseId}`,
         {
@@ -148,7 +148,6 @@ const UpdateCourse = () => {
             ref={titleRef}
           />
 
-          {/* {Update with ctx} */}
           <p>
             By{" "}
             {courseUser ? `${courseUser.firstName} ${courseUser.lastName}` : ""}
