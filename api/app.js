@@ -18,8 +18,8 @@ const routes = require("./routes");
 
 // create the Express app
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // setup morgan which gives us http request logging
 app.use(morgan("dev"));
