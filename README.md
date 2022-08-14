@@ -3,7 +3,7 @@
 Welcome to the last project to get my tech degree certificate from https://teamtreehouse.com/. 
 This app simulates a course app where users can sign up, sign in, and perform CRUD operations to add, modify, retrieve, and delete courses.
 
-# Running the ap
+# Running the app
 
 1. Install dependencies with the command npm install
 2. Populate data base with npm run seed
