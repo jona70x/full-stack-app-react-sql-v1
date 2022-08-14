@@ -10,6 +10,9 @@ import UserSignIn from "./components/Users/UserSignIn";
 import UserSignOut from "./components/Users/UserSignOut";
 import UserSignUp from "./components/Users/UserSignUp";
 import PrivateRoute from "./components/Courses/PrivateRoute";
+import Error from "./components/Errors/Error";
+import Forbidden from "./components/Errors/Forbidden";
+import NotFound from "./components/Errors/NotFound";
 
 const App = () => {
   return (
@@ -33,6 +36,10 @@ const App = () => {
         <Route path="/signout" element={<UserSignOut />} />
         <Route path="/signout" element={<UserSignOut />} />
         <Route path="/signup" element={<UserSignUp />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="/notfound" element={<NotFound />} />
+        <Route path="/forbidden" element={<Forbidden />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </>
   );

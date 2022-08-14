@@ -36,7 +36,6 @@ const UserSignIn = () => {
   const userSignIn = async (email, password) => {
     try {
       const response = await helpers.getUser(email, password);
-      console.log(response);
 
       if (response.status === 200) {
         setErrors([]);
