@@ -33,6 +33,7 @@ const AuthProvider = (props) => {
     alert("See you soon!");
   };
 
+  // app context
   const authContext = {
     isLoggedIn,
     credentials,
@@ -42,6 +43,7 @@ const AuthProvider = (props) => {
     },
   };
 
+  // Returning Context Provider to make it available at component level
   return (
     <AuthContext.Provider value={authContext}>
       {props.children}

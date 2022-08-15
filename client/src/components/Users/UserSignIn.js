@@ -41,6 +41,7 @@ const UserSignIn = () => {
         setErrors([]);
         alert("You are in!");
         // Calls method from context to sign in user
+        // If there are any errors with the response, this line of code won't be reached
         authCtx.actions.signIn(
           email,
           password,
@@ -58,6 +59,7 @@ const UserSignIn = () => {
     }
   };
 
+  // Sends SignIn Form and clean inputs
   const submitFormHandler = (e) => {
     e.preventDefault();
     // Cleaning inputs

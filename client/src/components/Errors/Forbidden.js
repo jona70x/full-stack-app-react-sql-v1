@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+// Component to display an error when API sends a 403 status code
 const Forbidden = () => {
   const navigate = useNavigate();
   return (

@@ -24,11 +24,20 @@ const NewCourseForm = () => {
   const materialsRef = useRef();
   const timeRef = useRef();
 
-  // Function to create course
+  /**
+   *
+   * @param {string} title
+   * @param {string} description
+   * @param {string} materialsNeeded
+   * @param {string} estimatedTime
+   * This function will make a post call to create a course
+   * It does need authentication credentials to make the request
+   * It will navigate the user if creation was successfull or
+   * navifate to '/error/ if reponse is 500
+   */
   const createCourse = async (
     title,
     description,
-
     materialsNeeded,
     estimatedTime
   ) => {
@@ -37,7 +46,6 @@ const NewCourseForm = () => {
       const encodedCredentials = btoa(
         `${authCtx.credentials.emailAddress}:${authCtx.credentials.password}`
       );
-      // console.log(userId);
       const response = await axios.post(
         "http://localhost:5000/api/courses",
         {
@@ -59,7 +67,6 @@ const NewCourseForm = () => {
         navigate("/");
       }
     } catch (error) {
-      console.error(error);
       setErrors(error.response.data.message || error.response.data.errors);
 
       if (error.response.status === 500) {
@@ -68,6 +75,7 @@ const NewCourseForm = () => {
     }
   };
 
+  // Function that submits form and clean inputs
   const submitHandlerForm = (e) => {
     e.preventDefault();
     // Cleaning inputs

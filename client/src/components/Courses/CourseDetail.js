@@ -27,7 +27,7 @@ const CourseDetail = () => {
         const response = await axios.get(
           `http://localhost:5000/api/courses/${courseId}`
         );
-        console.log(response.data);
+
         setCourseData(response.data);
       } catch (error) {
         // Navigating user to friendly 404 if route is not found
@@ -46,7 +46,7 @@ const CourseDetail = () => {
 
   // conditionally render a spinner while data is getting fetched
   let message;
-  // If user is not course owner, can not access action bar
+  // If user is not course owner, can not access delete and update buttons
   let isCourseOwner = false;
   let details;
   if (isLoading) {
@@ -96,7 +96,7 @@ const CourseDetail = () => {
 
   return (
     <main>
-      {isCourseOwner && <ActionsBar />}
+      {<ActionsBar isOwner={isCourseOwner} />}
       {message}
       {!isLoading && details}
     </main>

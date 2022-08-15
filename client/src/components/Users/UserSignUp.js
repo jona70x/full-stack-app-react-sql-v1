@@ -33,7 +33,7 @@ const UserSignUp = () => {
     }
   });
 
-  // user sign in function
+  // user sign up function
   const userSignUp = async (email, password, firstName, lastName) => {
     try {
       // Post request to axios
@@ -62,7 +62,6 @@ const UserSignUp = () => {
         );
 
         // take user to main page
-
         navigate("/");
       }
     } catch (error) {
@@ -74,6 +73,7 @@ const UserSignUp = () => {
     }
   };
 
+  // cleans inputs and submits form
   const submitFormHandler = (e) => {
     e.preventDefault();
     // Cleaning inputs

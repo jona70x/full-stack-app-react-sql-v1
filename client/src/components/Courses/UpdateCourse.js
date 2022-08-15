@@ -68,7 +68,18 @@ const UpdateCourse = () => {
     }
   }, [id, navigate, courseData.courseUser?.id, isLoading]);
 
-  // Update course function
+  /**
+   *
+   * @param {string} title
+   * @param {string} description
+   * @param {string} materialsNeeded
+   * @param {string} estimatedTime
+   * @param {string} courseId
+   * This function will make a post call to update a course
+   * It does need authentication credentials to make the request
+   * It will navigate the user if creation was successfull or
+   * navifate to '/error/ if reponse is 500
+   */
   const updateCourse = async (
     title,
     description,
@@ -103,12 +114,13 @@ const UpdateCourse = () => {
         navigate(`/courses/${courseId}`);
       }
     } catch (error) {
-      console.error(error);
-      setErrors(error.response.data.message || error.response.data.errors);
-
       if (error.response.status === 500) {
         navigate("/error");
       }
+      if (error.response.status === 404) {
+        navigate("/notfound");
+      }
+      setErrors(error.response.data.message || error.response.data.errors);
     }
   };
   const updateFormHandler = (e) => {

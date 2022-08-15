@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+// Component to display an error when API sends a 500 status code
 const Error = () => {
   const navigate = useNavigate();
   return (
