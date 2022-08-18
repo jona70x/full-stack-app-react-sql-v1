@@ -47,7 +47,7 @@ const NewCourseForm = () => {
         `${authCtx.credentials.emailAddress}:${authCtx.credentials.password}`
       );
       const response = await axios.post(
-        "http://localhost:5000/api/courses",
+        "https://courses-restapi.herokuapp.com/api/courses",
         {
           title,
           description,

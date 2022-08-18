@@ -37,12 +37,15 @@ const UserSignUp = () => {
   const userSignUp = async (email, password, firstName, lastName) => {
     try {
       // Post request to axios
-      const response = await axios.post("http://localhost:5000/api/users", {
-        firstName,
-        lastName,
-        emailAddress: email,
-        password,
-      });
+      const response = await axios.post(
+        "https://courses-restapi.herokuapp.com/api/users",
+        {
+          firstName,
+          lastName,
+          emailAddress: email,
+          password,
+        }
+      );
 
       // if the user is created api will throw a 201
       if (response.status === 201) {

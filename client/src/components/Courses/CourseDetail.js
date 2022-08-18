@@ -25,7 +25,7 @@ const CourseDetail = () => {
     const getData = async (courseId) => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/courses/${courseId}`
+          `https://courses-restapi.herokuapp.com/api/courses/${courseId}`
         );
 
         setCourseData(response.data);

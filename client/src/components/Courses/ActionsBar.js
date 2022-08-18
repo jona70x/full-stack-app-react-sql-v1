@@ -22,7 +22,7 @@ const ActionsBar = ({ isOwner }) => {
     );
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/courses/${id}`,
+        `https://courses-restapi.herokuapp.com/${id}`,
         {
           headers: {
             Authorization: `Basic ${encodedCredentials}`,

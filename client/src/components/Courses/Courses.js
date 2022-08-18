@@ -18,7 +18,9 @@ const Courses = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/courses");
+        const response = await axios.get(
+          "https://courses-restapi.herokuapp.com/api/courses"
+        );
         setCourseData(response.data);
       } catch (error) {
         // Navigating user to server error if axios return a 500

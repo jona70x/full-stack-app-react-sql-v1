@@ -38,7 +38,7 @@ const UpdateCourse = () => {
     const getData = async (courseId) => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/courses/${courseId}`
+          `https://courses-restapi.herokuapp.com/api/courses/${courseId}`
         );
         console.log(response.data);
         setCourseData(response.data);
@@ -94,7 +94,7 @@ const UpdateCourse = () => {
       );
 
       const response = await axios.put(
-        `http://localhost:5000/api/courses/${courseId}`,
+        `https://courses-restapi.herokuapp.com/api/courses/${courseId}`,
         {
           title,
           description,
