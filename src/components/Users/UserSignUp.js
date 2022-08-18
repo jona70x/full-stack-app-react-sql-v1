@@ -38,7 +38,7 @@ const UserSignUp = () => {
     try {
       // Post request to axios
       const response = await axios.post(
-        "http://courses-restapi.herokuapp.com/api/users",
+        "https://courses-restapi.herokuapp.com/api/users",
         {
           firstName,
           lastName,
