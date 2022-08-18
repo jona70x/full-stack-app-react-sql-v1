@@ -38,7 +38,7 @@ const UserSignUp = () => {
     try {
       // Post request to axios
       const response = await axios.post(
-        "https://courses-restapi.herokuapp.com/api/users",
+        "http://courses-restapi.herokuapp.com/api/users",
         {
           firstName,
           lastName,
@@ -55,17 +55,19 @@ const UserSignUp = () => {
         // use sign in method to get user signed in
         const response = await helpers.getUser(email, password);
 
-        // Calls method from context to sign in user
-        authCtx.actions.signIn(
-          email,
-          password,
-          response.data.id,
-          firstName,
-          lastName
-        );
+        if (response.status === 200) {
+          // Calls method from context to sign in user
+          authCtx.actions.signIn(
+            email,
+            password,
+            response.data.id,
+            firstName,
+            lastName
+          );
 
-        // take user to main page
-        navigate("/");
+          // take user to main page
+          navigate("/");
+        }
       }
     } catch (error) {
       setErrors(error.response.data.message || error.response.data.errors);
