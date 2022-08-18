@@ -49,23 +49,22 @@ const UserSignUp = () => {
 
       // if the user is created api will throw a 201
       if (response.status === 201) {
-        alert("Account successfully created!");
-        setErrors([]);
+        alert("Account successfully created. Please sign in");
 
-        // use sign in method to get user signed in
-        const response = await helpers.getUser(email, password);
+        // // use sign in method to get user signed in
+        // const response = await helpers.getUser(email, password);
 
-        // Calls method from context to sign in user
-        authCtx.actions.signIn(
-          email,
-          password,
-          response.data.id,
-          firstName,
-          lastName
-        );
+        // // Calls method from context to sign in user
+        // authCtx.actions.signIn(
+        //   email,
+        //   password,
+        //   response.data.id,
+        //   firstName,
+        //   lastName
+        // );
 
         // take user to main page
-        navigate("/");
+        navigate("/signin");
       }
     } catch (error) {
       setErrors(error.response.data.message || error.response.data.errors);
