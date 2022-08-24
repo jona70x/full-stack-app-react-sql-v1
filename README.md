@@ -9,6 +9,10 @@ Welcome to the last project to get my tech degree certificate from https://teamt
 3.Start the app with npm start
 4.Enjoy!
 
+# Live App
+
+You can check the live app here: https://react-fullstack-courses-app.herokuapp.com/
+
 # Dependencies
 
 - Sequelize
